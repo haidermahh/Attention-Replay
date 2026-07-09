@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="logo-area">
+        <img src="icons/icon-48.png" class="brand-logo-icon" alt="Attention Replay Icon">
+        <h1 class="title">Attention Replay</h1>
+      </div>
+      <p class="subtitle" id="popup-date">Today's Focus Activity</p>
+    </header>
+
+    <main class="content">
+      <div id="loading" class="state-message">Loading activity data...</div>
+      <div id="empty-state" class="state-message hidden">
+        <div class="empty-icon">⏳</div>
+        <p>No browsing tracked yet today.</p>
+        <p class="hint">Active tabs will appear here.</p>
+      </div>
+      <div id="stats-area" class="hidden">
+        <div id="total-time-container">
+          <span class="total-label">Active Time:</span>
+          <span id="total-time-value" class="total-val">0m</span>
+        </div>
+
+        <!-- Current Active Site Card -->
+        <div id="current-site-container" class="current-site-card">
+          <div class="current-site-label">Currently Tracking</div>
+          <div id="current-site-details" class="current-site-details">
+            <div class="current-site-meta">
+              <img id="current-site-icon" class="favicon" src="" alt="">
+              <div id="current-site-fallback" class="favicon-fallback hidden"></div>
+              <span id="current-site-domain" class="current-domain-name">None</span>
+            </div>
+            <span id="current-site-time" class="current-site-duration">0s</span>
+          </div>
+        </div>
+
+        <div class="top-sites-section">
+          <div class="section-title">Today's Top 3 Sites</div>
+          <div id="sites-list" class="sites-list">
+            <!-- Dynamically populated top 3 sites -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <button id="open-dashboard-btn" class="btn btn-primary">View Full Dashboard</button>
+    </footer>
+  </div>
+  <div id="toast-container" class="toast-container"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
